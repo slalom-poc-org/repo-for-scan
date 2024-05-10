@@ -1,0 +1,23 @@
+version: 2.1
+
+# Define the jobs we want to run for this project
+jobs:
+  build:
+   steps:
+      - name: Git checkout
+        uses: actions/checkout@v2
+
+      - name: Use Node 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Install Dependencies (prod)
+        run: yarn install --frozen-lockfile --production
+
+      - name: Run Tests (JEST)
+        run: yarn test --ci --silent --testPathIgnorePatterns=experimental
+        env:
+          CI: true
+          API_KEY: AIzaSyDaGmWKa4JsXZ-HjGw7ISLn_3namBGewQe
+          #API_KEY: ${{ secrets.API_KEY }}
