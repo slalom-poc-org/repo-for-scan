@@ -19,5 +19,6 @@ jobs:
         run: yarn test --ci --silent --testPathIgnorePatterns=experimental
         env:
           CI: true
-          API_KEY: AIzaSyDaGmWKa4JsXZ-HjGw7ISLn_3namBGewQe
+          API_KEY: e7062c5b-d95d-4fa5-af31-52cb6e662816
+          #API_KEY: AIzaSyDaGmWKa4JsXZ-HjGw7ISLn_3namBGewQe
           #API_KEY: ${{ secrets.API_KEY }}
